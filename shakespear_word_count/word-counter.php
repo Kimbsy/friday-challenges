@@ -79,7 +79,7 @@ function word_count($argv, &$words) {
  * 
  * @param  string $line
  *     Single line from input text file.
- * @param  array  &$words
+ * @param  array &$words
  *     Array of word counts indexed by word, pased by reference.
  */
 function word_count_by_line($line, &$words) {
@@ -112,6 +112,10 @@ function word_count_by_line($line, &$words) {
  * 
  * @param  array $words
  *     Array of word counts indexed by word.
+ * @param  boolean $formatting
+ *     Whether or not to use better formatting in displaying output.
+ * @param  int $show
+ *     The number of results rows to show.
  */
 function display_results($words, $formatting, $show) {
   // sort the words array keeping keys intact
@@ -125,7 +129,6 @@ function display_results($words, $formatting, $show) {
   // print_r($maxlen . PHP_EOL);
 
   // print the words in descending order
-  // $show = 5;
   $n = 0;
 
   foreach ($words as $word => $count) {
