@@ -2,7 +2,7 @@
 
 // must have input an argument
 if (count($argv) == 1) {
-  print_r("Please enter an integer value.\n");
+  print_r("Please enter an integer value.\n\n");
 }
 
 // each arg must be numeric
@@ -17,8 +17,11 @@ foreach ($argv as $ind => $arg) {
         get_and_print_numeral(round($arg));
       }
       elseif ($arg > 10000000000000) {
-        print_r("That's too much man!");
+        print_r("That's too much man!\n\n");
         die;
+      }
+      else {
+        get_and_print_numeral(round($arg));
       }
     }
     elseif ($ind && !is_numeric($arg)) {
